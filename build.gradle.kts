@@ -19,6 +19,7 @@ dependencies {
     api("com.google.code.gson:gson:2.9.0")
     api("com.squareup.okhttp3:okhttp:4.11.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
 }
 
 group = "no.hvl.dat250.rest"
