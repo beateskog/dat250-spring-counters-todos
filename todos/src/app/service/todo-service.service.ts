@@ -20,15 +20,14 @@ export class TodoService {
 
   public findAll(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.todosUrl)
-      .pipe(
-        catchError((error: any) => {
-          console.error('HTTP Error:', error);
-          throw error; // Rethrow the error
-        })
-      );
   }
 
   public save(todo: Todo) {
     return this.http.post<Todo>(this.todosUrl, todo);
   }
+
+  public delete(id: number) {
+    return this.http.delete(`${this.todosUrl}/${id}`);
+  }
+
 }

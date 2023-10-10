@@ -15,8 +15,26 @@ export class TodoListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.todoService.findAll().subscribe(data => {
-          this.todos = data;
+      this.loadTodos();
+  }
+
+  loadTodos() {
+    this.todoService.findAll().subscribe(data => {
+        this.todos = data;
+    });
+}
+
+  deleteTodo(id: number) {
+      this.todoService.delete(id).subscribe(data => {
+          console.log(data);
+          this.todoService.findAll().subscribe(data => {
+              this.todos = data;
+          });
       });
   }
+
+  refreshTodos() {
+    this.loadTodos(); // Reload todos when the "Refresh" button is clicked
+}
+
 }

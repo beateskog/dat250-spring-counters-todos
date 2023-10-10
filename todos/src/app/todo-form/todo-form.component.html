@@ -1,29 +1,29 @@
 <div class="card my-5">
     <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #todoForm="ngForm"> <!-- Update the form name -->
+      <form (ngSubmit)="onSubmit()" #todoForm="ngForm"> 
         <div class="form-group">
-          <label for="summary">Summary</label> <!-- Update the label -->
+          <label for="summary">Summary</label>
           <input type="text" [(ngModel)]="todo.summary" 
             id="summary" 
             name="summary" 
             placeholder="Enter a summary" 
             required #summary="ngModel">
         </div>
-        <div [hidden]="!summary.pristine" class="alert alert-danger">Summary is required</div> <!-- Update the error message -->
+        <div [hidden]="!summary.pristine" class="alert alert-danger">Summary is required</div> 
   
         <div class="form-group">
-          <label for="description">Description</label> <!-- Add a label for description -->
+          <label for="description">Description</label> 
           <textarea [(ngModel)]="todo.description" 
             class="form-control" 
             id="description" 
             name="description" 
             placeholder="Enter a description"
             required #description="ngModel"></textarea>
-          <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div> <!-- Update the error message -->
+          <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div>
         </div>
   
         <button type="submit" [disabled]="!todoForm.form.valid" 
-          class="btn btn-info">Submit</button> <!-- Update the button text -->
+          class="btn btn-info">Submit</button>
       </form>
     </div>
   </div>
